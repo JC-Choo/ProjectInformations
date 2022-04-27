@@ -1,11 +1,21 @@
 package dev.chu.infos
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dev.chu.infos.base.BaseActivity
+import dev.chu.infos.databinding.ActivityMainBinding
+import dev.chu.infos.model.getItems
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>(
+    R.layout.activity_main
+) {
+
+    private val mainAdapter = MainAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        with(binding.list) {
+            adapter = mainAdapter
+            mainAdapter.items = getItems()
+        }
     }
 }
