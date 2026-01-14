@@ -1,6 +1,7 @@
 package dev.chu.infos.base
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ abstract class BaseActivity<VDB : ViewDataBinding>(
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
+        enableEdgeToEdge()
     }
 
     override fun onDestroy() {

@@ -1,19 +1,18 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
 }
 
 android {
     namespace = "dev.chu.infos"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.chu.infos"
-        minSdk = 23
-        targetSdk = 34
-        versionCode = 3
-        versionName = "1.0.3"
+        minSdk = 30
+        targetSdk = 35
+        versionCode = 100005
+        versionName = "1.0.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
